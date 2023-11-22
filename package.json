@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "node": "^21.1.0",
+    "topojson": "^3.0.2"
+  }
+}
