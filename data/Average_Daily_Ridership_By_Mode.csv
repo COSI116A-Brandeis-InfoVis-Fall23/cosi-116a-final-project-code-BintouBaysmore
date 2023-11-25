@@ -1,0 +1,343 @@
+﻿Calendar_Year,Calendar_Month,Mode,Average_Daily_Ridership,Source,ObjectId
+2019,10,Regional Rail,133614,Revenue,1
+2019,10,Trackless Trolley,16645,Revenue,2
+2019,10,Trolley,80063,APC,3
+2019,11,Bus,490316,APC,4
+2019,11,CCT,6145,Revenue,5
+2019,11,Heavy Rail,322462,Revenue,6
+2019,11,Regional Rail,130761,Revenue,7
+2019,11,Trackless Trolley,16576,Revenue,8
+2019,11,Trolley,80113,APC,9
+2019,12,Bus,477194,APC,10
+2019,12,CCT,4595,Revenue,11
+2019,12,Heavy Rail,312677,Revenue,12
+2019,12,Regional Rail,128363,Revenue,13
+2019,12,Trackless Trolley,16051,Revenue,14
+2019,12,Trolley,78034,APC,15
+2020,1,Bus,493261,APC,16
+2020,1,CCT,4414,Revenue,17
+2020,1,Heavy Rail,311442,Revenue,18
+2020,1,Regional Rail,129953,Revenue,19
+2020,1,Trackless Trolley,11579,Revenue,20
+2020,1,Trolley,79713,APC,21
+2020,2,Bus,503967,APC,22
+2020,2,CCT,5075,Revenue,23
+2020,2,Heavy Rail,309414,Revenue,24
+2020,2,Regional Rail,125397,Revenue,25
+2020,2,Trackless Trolley,12017,Revenue,26
+2020,2,Trolley,82076,APC,27
+2020,3,Bus,414021,APC,28
+2020,3,CCT,3885,Revenue,29
+2020,3,Heavy Rail,191819,Revenue,30
+2020,3,Regional Rail,60912,Revenue,31
+2020,3,Trackless Trolley,12304,Revenue,32
+2020,3,Trolley,58641,APC,33
+2020,4,Bus,141411,APC,34
+2020,4,CCT,694,Revenue,35
+2020,4,Heavy Rail,44353,Revenue,36
+2020,4,Regional Rail,5168,Revenue,37
+2020,4,Trackless Trolley,324,Revenue,38
+2020,4,Trolley,14870,APC,39
+2020,5,Bus,165838,APC,40
+2020,5,CCT,973,Revenue,41
+2020,5,Heavy Rail,52913,Revenue,42
+2020,5,Regional Rail,2016,Revenue,43
+2020,5,Trackless Trolley,2197,Revenue,44
+2020,5,Trolley,20611,APC,45
+2020,6,Bus,192334,APC,46
+2020,6,CCT,1056,Revenue,47
+2020,6,Heavy Rail,66216,Revenue,48
+2020,6,Regional Rail,8516,Revenue,49
+2020,6,Trackless Trolley,5285,Revenue,50
+2020,6,Trolley,27991,APC,51
+2020,7,Bus,203766,APC,52
+2020,7,CCT,1076,Revenue,53
+2020,7,Heavy Rail,86270,Revenue,54
+2020,7,Regional Rail,17381,Revenue,55
+2020,7,Trackless Trolley,6419,Revenue,56
+2020,7,Trolley,31135,APC,57
+2019,1,Bus,459160,APC,58
+2019,1,CCT,4294,Revenue,59
+2019,1,Heavy Rail,296709,Revenue,60
+2019,1,Regional Rail,122856,Revenue,61
+2019,1,Trackless Trolley,16285,Revenue,62
+2019,1,Trolley,82787,APC,63
+2019,2,Bus,464674,APC,64
+2019,2,CCT,4652,Revenue,65
+2019,2,Heavy Rail,315858,Revenue,66
+2019,2,Regional Rail,121161,Revenue,67
+2019,2,Trackless Trolley,16476,Revenue,68
+2019,2,Trolley,82787,APC,69
+2019,3,Bus,478487,APC,70
+2019,3,CCT,6027,Revenue,71
+2019,3,Heavy Rail,308777,Revenue,72
+2019,3,Regional Rail,118228,Revenue,73
+2019,3,Trackless Trolley,16755,Revenue,74
+2019,3,Trolley,82433,APC,75
+2019,4,Bus,473732,APC,76
+2019,4,CCT,4805,Revenue,77
+2019,4,Heavy Rail,305491,Revenue,78
+2019,4,Regional Rail,124045,Revenue,79
+2019,4,Trackless Trolley,16458,Revenue,80
+2019,4,Trolley,84864,APC,81
+2019,5,Bus,480074,APC,82
+2019,5,CCT,5655,Revenue,83
+2019,5,Heavy Rail,303776,Revenue,84
+2019,5,Regional Rail,119187,Revenue,85
+2019,5,Trackless Trolley,16456,Revenue,86
+2019,5,Trolley,83413,APC,87
+2019,6,Bus,396720,APC,88
+2019,6,CCT,4924,Revenue,89
+2019,6,Heavy Rail,273813,Revenue,90
+2019,6,Regional Rail,113745,Revenue,91
+2019,6,Trackless Trolley,14104,Revenue,92
+2019,6,Trolley,73295,APC,93
+2019,7,Bus,401911,APC,94
+2019,7,CCT,4314,Revenue,95
+2019,7,Heavy Rail,263492,Revenue,96
+2019,7,Regional Rail,115144,Revenue,97
+2019,7,Trackless Trolley,13495,Revenue,98
+2019,7,Trolley,71573,APC,99
+2019,8,Bus,406865,APC,100
+2019,8,CCT,5649,Revenue,101
+2019,8,Heavy Rail,268150,Revenue,102
+2020,8,Bus,189252,Revenue_Estimate,103
+2019,8,Regional Rail,114436,Revenue,104
+2019,8,Trackless Trolley,13285,Revenue,105
+2019,8,Trolley,75874,APC,106
+2019,9,Bus,501557,APC,107
+2019,9,CCT,4933,Revenue,108
+2019,9,Heavy Rail,321907,Revenue,109
+2019,9,Regional Rail,138481,Revenue,110
+2019,9,Trackless Trolley,16524,Revenue,111
+2019,9,Trolley,80939,APC,112
+2019,10,Bus,502857,APC,113
+2019,10,CCT,4687,Revenue,114
+2019,10,Heavy Rail,326562,Revenue,115
+2020,8,CCT,1611,Revenue,116
+2020,8,Heavy Rail,87788,Revenue,117
+2020,8,Regional Rail,18288,Revenue,118
+2020,8,Trackless Trolley,6943,Revenue,119
+2020,8,Trolley,26191,Revenue_Estimate,120
+2020,9,Bus,205693,Revenue_Estimate,121
+2020,9,CCT,1471,Revenue,122
+2020,9,Heavy Rail,96188,Revenue,123
+2020,9,Regional Rail,23479,Revenue,124
+2020,9,Trackless Trolley,6800,Revenue,125
+2020,9,Trolley,23834,Revenue_Estimate,126
+2020,10,Bus,207445,Revenue_Estimate,127
+2020,10,CCT,1588,Revenue,128
+2020,10,Heavy Rail,97333,Revenue,129
+2020,10,Regional Rail,22844,Revenue,130
+2020,10,Trackless Trolley,7131,Revenue,131
+2020,10,Trolley,23686,Revenue_Estimate,132
+2020,11,Bus,193063,Revenue_Estimate,133
+2020,11,CCT,2004,Revenue,134
+2020,11,Heavy Rail,88690,Revenue,135
+2020,11,Regional Rail,23836,Revenue,136
+2020,11,Trackless Trolley,6557,Revenue,137
+2020,11,Trolley,22903,Revenue_Estimate,138
+2020,12,Bus,200729,Revenue_Estimate,139
+2020,12,CCT,1314,Revenue,140
+2020,12,Heavy Rail,92190,Revenue,141
+2020,12,Regional Rail,23381,Revenue,142
+2020,12,Trackless Trolley,6898,Revenue,143
+2020,12,Trolley,24671,Revenue_Estimate,144
+2021,1,Bus,184766,APC,145
+2021,1,CCT,1381,Revenue,146
+2021,1,Heavy Rail,88543,Revenue,147
+2021,1,Regional Rail,24283,Revenue,148
+2021,1,Trackless Trolley,6420,Revenue,149
+2021,1,Trolley,24608,Revenue_Estimate,150
+2021,2,Bus,184944,APC,151
+2021,2,CCT,1399,Revenue,152
+2021,2,Heavy Rail,84876,Revenue,153
+2021,2,Regional Rail,15466,Revenue,154
+2021,2,Trackless Trolley,5770,Revenue,155
+2021,2,Trolley,24824,Revenue_Estimate,156
+2021,3,Bus,208266,APC,157
+2021,3,CCT,2082,Revenue,158
+2021,3,Heavy Rail,94351,Revenue,159
+2021,3,Regional Rail,21225,Revenue,160
+2021,3,Trackless Trolley,6554,Revenue,161
+2021,3,Trolley,25485,Revenue_Estimate,162
+2021,4,Bus,209824,APC,163
+2021,4,CCT,1833,Revenue,164
+2021,4,Heavy Rail,104843,Revenue,165
+2021,4,Regional Rail,21312,Revenue,166
+2021,4,Trackless Trolley,7173,Revenue,167
+2021,4,Trolley,27140,Revenue_Estimate,168
+2021,5,Bus,216243,APC,169
+2021,5,CCT,3158,Revenue,170
+2021,5,Heavy Rail,109747,Revenue,171
+2022,12,Regional Rail,60226,Revenue,172
+2022,12,Trackless Trolley,8929,Revenue,173
+2022,12,Trolley,37275,Revenue_Estimate,174
+2023,1,Bus,319605,APC,175
+2023,1,CCT,2834,Revenue,176
+2023,1,Heavy Rail,142909,Revenue,177
+2023,1,Regional Rail,62311,Revenue,178
+2023,1,Trackless Trolley,8696,Revenue,179
+2023,1,Trolley,39738,Revenue_Estimate,180
+2023,2,Bus,342049,APC,181
+2023,2,CCT,2882,Revenue,182
+2023,2,Heavy Rail,144909,Revenue,183
+2023,2,Regional Rail,64720,Revenue,184
+2023,2,Trackless Trolley,8595,Revenue,185
+2023,2,Trolley,44706,Revenue_Estimate,186
+2023,3,Bus,341407,APC,187
+2023,3,CCT,2982,Revenue,188
+2023,3,Heavy Rail,137699,Revenue,189
+2023,3,Regional Rail,66514,Revenue,190
+2023,3,Trackless Trolley,8610,Revenue,191
+2023,3,Trolley,39744,Revenue_Estimate,192
+2023,4,Bus,336495,APC,193
+2023,4,CCT,2952,Revenue,194
+2023,4,Heavy Rail,138287,Revenue,195
+2023,4,Regional Rail,66900,Revenue,196
+2023,4,Trackless Trolley,8365,Revenue,197
+2023,4,Trolley,38427,Revenue_Estimate,198
+2023,5,Bus,359462,APC,199
+2023,5,CCT,2985,Revenue,200
+2023,5,Heavy Rail,143856,Revenue,201
+2023,5,Regional Rail,65979,Revenue,202
+2023,5,Trackless Trolley,8803,Revenue,203
+2023,5,Trolley,47563,APC,204
+2023,6,Bus,302745,APC,205
+2023,6,CCT,2981,Revenue,206
+2023,6,Heavy Rail,134429,Revenue,207
+2023,6,Regional Rail,66067,Revenue,208
+2023,6,Trackless Trolley,7861,Revenue,209
+2023,6,Trolley,43548,APC,210
+2023,7,Bus,297469,APC,211
+2023,7,CCT,2921,Revenue,212
+2023,7,Heavy Rail,129900,Revenue,213
+2023,7,Regional Rail,61204,Revenue,214
+2023,7,Trackless Trolley,7495,Revenue,215
+2023,7,Trolley,40544,APC,216
+2023,8,Bus,307127,APC,217
+2023,8,CCT,2972,Revenue,218
+2023,8,Heavy Rail,141078,Revenue,219
+2023,8,Regional Rail,60123,Revenue,220
+2023,8,Trackless Trolley,7870,Revenue,221
+2023,8,Trolley,44092,APC,222
+2023,9,Bus,367249,APC,223
+2023,9,CCT,3044,Revenue,224
+2023,9,Heavy Rail,181826,Revenue,225
+2023,9,Regional Rail,70733,Revenue,226
+2023,9,Trackless Trolley,9340,Revenue,227
+2023,9,Trolley,50049,APC,228
+2021,5,Regional Rail,25380,Revenue,229
+2021,5,Trackless Trolley,7369,Revenue,230
+2021,5,Trolley,28242,Revenue_Estimate,231
+2021,6,Bus,222345,APC,232
+2021,6,CCT,1564,Revenue,233
+2021,6,Heavy Rail,112267,Revenue,234
+2021,6,Regional Rail,28832,Revenue,235
+2021,6,Trackless Trolley,6930,Revenue,236
+2021,6,Trolley,30826,Revenue_Estimate,237
+2021,7,Bus,232352,APC,238
+2021,7,CCT,1736,Revenue,239
+2021,7,Heavy Rail,115614,Revenue,240
+2021,7,Regional Rail,32582,Revenue,241
+2021,7,Trackless Trolley,7408,Revenue,242
+2021,7,Trolley,28434,Revenue_Estimate,243
+2021,8,Bus,238176,APC,244
+2021,8,CCT,2478,Revenue,245
+2021,8,Heavy Rail,115936,Revenue,246
+2021,8,Regional Rail,33513,Revenue,247
+2021,8,Trackless Trolley,7225,Revenue,248
+2021,8,Trolley,30921,Revenue_Estimate,249
+2021,9,Bus,291653,APC,250
+2021,9,CCT,2144,Revenue,251
+2021,9,Heavy Rail,151160,Revenue,252
+2021,9,Regional Rail,42560,Revenue,253
+2021,9,Trackless Trolley,9282,Revenue,254
+2021,9,Trolley,37844,Revenue_Estimate,255
+2021,10,Bus,302979,APC,256
+2021,10,CCT,2236,Revenue,257
+2021,10,Heavy Rail,157350,Revenue,258
+2021,10,Regional Rail,53831,Revenue,259
+2021,10,Trackless Trolley,9572,Revenue,260
+2021,10,Trolley,37036,Revenue_Estimate,261
+2021,11,Bus,293035,APC,262
+2021,11,CCT,2380,Revenue,263
+2021,11,Heavy Rail,150727,Revenue,264
+2021,11,Regional Rail,52291,Revenue,265
+2021,11,Trackless Trolley,9733,Revenue,266
+2021,11,Trolley,35881,Revenue_Estimate,267
+2021,12,Bus,272915,APC,268
+2021,12,CCT,2351,Revenue,269
+2021,12,Heavy Rail,142023,Revenue,270
+2021,12,Regional Rail,47061,Revenue,271
+2021,12,Trackless Trolley,9010,Revenue,272
+2021,12,Trolley,34169,Revenue_Estimate,273
+2022,1,Bus,243951,APC,274
+2022,1,CCT,2019,Revenue,275
+2022,1,Heavy Rail,115382,Revenue,276
+2022,1,Regional Rail,32407,Revenue,277
+2022,1,Trackless Trolley,7476,Revenue,278
+2022,1,Trolley,30631,Revenue_Estimate,279
+2022,2,Bus,292800,APC,280
+2022,2,CCT,2309,Revenue,281
+2022,2,Heavy Rail,142654,Revenue,282
+2022,2,Regional Rail,48846,Revenue,283
+2022,2,Trackless Trolley,8852,Revenue,284
+2022,2,Trolley,40565,Revenue_Estimate,285
+2022,3,Bus,303607,APC,286
+2022,3,CCT,2564,Revenue,287
+2022,3,Heavy Rail,145909,Revenue,288
+2022,3,Regional Rail,54994,Revenue,289
+2022,3,Trackless Trolley,9530,Revenue,290
+2022,3,Trolley,38122,Revenue_Estimate,291
+2022,4,Bus,297311,APC,292
+2022,4,CCT,2677,Revenue,293
+2022,4,Heavy Rail,143797,Revenue,294
+2022,4,Regional Rail,54044,Revenue,295
+2022,4,Trackless Trolley,8766,Revenue,296
+2022,4,Trolley,35922,Revenue_Estimate,297
+2022,5,Bus,313650,APC,298
+2022,5,CCT,2714,Revenue,299
+2022,5,Heavy Rail,140826,Revenue,300
+2022,5,Regional Rail,51962,Revenue,301
+2022,5,Trackless Trolley,8961,Revenue,302
+2022,5,Trolley,38581,Revenue_Estimate,303
+2022,6,Bus,262689,APC,304
+2022,6,CCT,2631,Revenue,305
+2022,6,Heavy Rail,130480,Revenue,306
+2022,6,Regional Rail,55791,Revenue,307
+2022,6,Trackless Trolley,8350,Revenue,308
+2022,6,Trolley,35000,Revenue_Estimate,309
+2022,7,Bus,272936,APC,310
+2022,7,CCT,2743,Revenue,311
+2022,7,Heavy Rail,120182,Revenue,312
+2022,7,Regional Rail,51583,Revenue,313
+2022,7,Trackless Trolley,7557,Revenue,314
+2022,7,Trolley,34354,Revenue_Estimate,315
+2022,8,Bus,272216,APC,316
+2022,8,CCT,2742,Revenue,317
+2022,8,Heavy Rail,128345,Revenue,318
+2022,8,Regional Rail,53394,Revenue,319
+2022,8,Trackless Trolley,7586,Revenue,320
+2022,8,Trolley,44765,Revenue_Estimate,321
+2022,9,Bus,341880,APC,322
+2022,9,CCT,2864,Revenue,323
+2022,9,Heavy Rail,147378,Revenue,324
+2022,9,Regional Rail,62122,Revenue,325
+2022,9,Trackless Trolley,9073,Revenue,326
+2022,9,Trolley,39475,Revenue_Estimate,327
+2022,10,Bus,340544,APC,328
+2022,10,CCT,2857,Revenue,329
+2022,10,Heavy Rail,156381,Revenue,330
+2022,10,Regional Rail,63954,Revenue,331
+2022,10,Trackless Trolley,9366,Revenue,332
+2022,10,Trolley,39046,Revenue_Estimate,333
+2022,11,Bus,338481,APC,334
+2022,11,CCT,2851,Revenue,335
+2022,11,Heavy Rail,145873,Revenue,336
+2022,11,Regional Rail,64215,Revenue,337
+2022,11,Trackless Trolley,9003,Revenue,338
+2022,11,Trolley,40666,Revenue_Estimate,339
+2022,12,Bus,299614,APC,340
+2022,12,CCT,2869,Revenue,341
+2022,12,Heavy Rail,136539,Revenue,342
