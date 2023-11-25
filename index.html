@@ -6,11 +6,7 @@
   <meta charset="utf-8">
   
   <!-- Title -->
-<<<<<<< HEAD
   <title>Project Team 6: Topic, COSI 116A F23</title>
-=======
-  <title>Project Team #6: Topic, COSI 116A F23</title>
->>>>>>> f1375c86725f7f7cf6163ddef0195406c1063350
   
   <!-- CSS Styling -->
   <link rel="stylesheet" href="style.css">
@@ -28,6 +24,8 @@
 <!--Map needs-->
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="files/colors.js"></script>
+  <script src="js/visualization.js"></script>
 </head>
 
 <!-- Main page content -->
@@ -65,6 +63,11 @@
     <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
     <svg id="vis-svg"
       preserveAspectRatio="xMidYMid meet" class="marks" viewBox="0 0 821 520" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg>
+        <g id="boundary"></g>
+        <g id="states"></g>
+      </svg>
+      <script src="js/visualization.js"></script>
       
     
     <!-- Don't delete the closing tag! -->
