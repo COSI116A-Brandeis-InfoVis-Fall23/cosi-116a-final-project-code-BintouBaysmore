@@ -78,6 +78,15 @@ h1, h2, h3 {
 	}
 }
 
+.MBTAbtn img,
+.MTAbtn img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* Ensure the image behaves as a block element */
+}
+
+
+
 /*NYC chart style*/
 
 circle {
