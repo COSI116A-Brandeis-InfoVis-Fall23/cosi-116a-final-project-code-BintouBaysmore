@@ -10,12 +10,12 @@ var total = 156,
     pie = document.querySelector('.pie'),
     activeClass = 'active';
 
-var continents = {
-  puertoRican: 23,
-  African : 11,
-  Mexican: 10,
-  Dominican: 9,
-  TrainRiders: 69,
+var stations = {
+  RedLine: 23,
+  GreenLine : 11,
+  OrangeLine: 10,
+  GreenLine: 9,
+  BlueLine: 69,
 };
 
 // work out percentage as a result of total
@@ -25,7 +25,7 @@ var numberFixer = function(num){
 }
 
 // create a button for each country
-for(property in continents){
+for(property in stations){
   var newEl = document.createElement('button');
   newEl.innerText = property;
   newEl.setAttribute('data-name', property);
@@ -44,7 +44,7 @@ for(property in continents){
   });
 
 var setPieChart = function(name){
-  var number = continents[name],
+  var number = stations[name],
       fixedNumber = numberFixer(number),
       result = fixedNumber + ' ' + total;
   
@@ -59,5 +59,79 @@ var setActiveClass = function(el) {
 }
 
 // Set up default settings
-setPieChart('puertoRican');
+setPieChart('RedLine');
 setActiveClass(buttons.children[0]);
+
+//LINE CHART BELOW
+
+// dimensions
+const margin = {top: 70, right: 30, bottom:40, left:80};
+const width =  1200- margin.left - margin.right;
+const height = 500 - margin.top - margin.bottom;
+
+// x and y scales
+const x = d3.scaleTime()
+  .range([0, width]);
+const y = d3.scaleLinear()
+  .range([height, 0]);
+
+// SVG element
+const svg = d3.select("#chart-container")
+  .append("svg")
+    .attr("width", width + margin.left +margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", 'translate(${margin.left}, ${margin.top})');
+
+//Load and Process data 
+d3.csv("Line,_and_Stop(1).csv").then(function (data) {
+  const parseDate= d3.timeParse("%Y");
+  data.forEach(d => {
+    d.route_id= parseDate(d.route_id);
+    d.average_flow =+ d.average_flow;
+  });
+
+  console.log(data)
+
+//define the x and y domains
+x.domain(d3.extent(data, d => d.route_id));
+y.domain([0, d3.max(data, d => d.average_flow)]);
+
+//create line generator
+const line= d3.line()
+  .x(d => x(d.route_id))
+  .y(d => y(d.average_flow));
+
+//add the line path
+svg.append("path")
+  .datum(data)
+  .attr("fill", "none")
+  .attr("stroke", "blue")
+  .attr("stroke-width", 1)
+  .attr("d", line);
+})
+
+// // Add Y-axis label
+
+svg.append("text")
+.attr("transform", "rotate(-90)")
+.attr("y", 0 - margin.left)
+.attr("x", 0 - (height / 2))
+.attr("dy", "1em")
+.style("text-anchor", "middle")
+.style("font-size", "14px")
+.style("fill", "#777")
+.style("font-family", "sans-serif")
+.text("Transit Lines");
+
+// // Add the chart title
+
+svg.append("text")
+.attr("class", "chart-title")
+.attr("x", margin.left - 115)
+.attr("y", margin.top - 100)
+.style("font-size", "24px")
+.style("font-weight", "bold")
+.style("font-family", "sans-serif")
+.text("MBTA transit lines"); 
+  
