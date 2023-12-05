@@ -1,41 +1,33 @@
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Fetch data from your API or load it from a file
-    fetch("../data/Stations.json")
-      .then((response) => response.json())
-      .then((data) => {
-        // Create the table
-        const table = document.createElement("table");
-        table.className = "table";
+d3.json("../data/Stations.json", function (error, data) {
+    if (error) {
+      console.error("Error loading JSON:", error);
+      return;
+    }
   
-        // Create table header
-        const thead = document.createElement("thead");
-        const headerRow = thead.insertRow();
-        ["Stop", "Total Ons", "Total Offs", "Average Flow"].forEach((header) => {
-          const th = document.createElement("th");
-          th.textContent = header;
-          headerRow.appendChild(th);
-        });
-        table.appendChild(thead);
+    // Create the table
+    const table = d3.select("#table-container")
+      .append("table")
+      .attr("class", "table");
   
-        // Create table body
-        const tbody = document.createElement("tbody");
-        data.forEach((row) => {
-          const tr = document.createElement("tr");
-          ["stop_name", "total_ons", "total_offs", "average_flow"].forEach((key) => {
-            const td = document.createElement("td");
-            td.textContent = row[key];
-            tr.appendChild(td);
-          });
-          tbody.appendChild(tr);
-        });
-        table.appendChild(tbody);
+    // Create table header
+    const thead = table.append("thead");
+    thead.append("tr")
+      .selectAll("th")
+      .data(["Stop", "Total Ons", "Total Offs", "Average Flow"])
+      .enter()
+      .append("th")
+      .text(d => d);
   
-        // Append the table to the container with id "table-container"
-        const tableContainer = document.getElementById("table-container");
-        tableContainer.appendChild(table);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    // Create table rows
+    const tbody = table.append("tbody");
+    const rows = tbody.selectAll("tr")
+      .data(data)
+      .enter()
+      .append("tr");
+  
+    // Populate the table
+    rows.append("td").text(d => d.stop_name);
+    rows.append("td").text(d => d.total_ons);
+    rows.append("td").text(d => d.total_offs);
+    rows.append("td").text(d => d.average_flow);
   });
