@@ -1,3 +1,4 @@
+// gets the data from the data folder
 d3.json("../data/Stations.json", function (error, data) {
     if (error) {
       console.error("Error loading JSON:", error);
