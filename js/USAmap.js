@@ -1,5 +1,5 @@
 
-
+//used Maptime Tutorial with some alterations (modern USA instead of 1790 in topologies array)
 
 var svgStates = d3.select("svg #states"),
   svgBoundary = d3.select("svg #boundary"),
@@ -7,14 +7,15 @@ var svgStates = d3.select("svg #states"),
   startYear = 1790,
   currentYear = startYear;
 
-var width = window.innerWidth, // (1)
+
+var width = window.innerWidth, 
 height = window.innerHeight;
 
 var projection = d3.geoAlbersUsa()
-.translate([width / 3, height / 2]); // (2)
+.translate([width / 3, height / 2]); 
 
 var path = d3.geoPath()
-  .projection(projection);  // (3)
+  .projection(projection);  
 
 d3.json("data/usa.json", function(error, boundary) {
   svgBoundary.selectAll("path")

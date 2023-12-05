@@ -6,6 +6,9 @@ This template will help you get started with your project. Please look through a
 
 Make sure you publish your project to github pages, and put the URL here: 
 
+https://cosi116a-brandeis-infovis-fall23.github.io/cosi-116a-final-project-code-Undergraduate6-MBTA/
+
+
 ### Github Pages
 
 For your final project, you must render your project as a Github Page.  Github pages is a feature of GitHub repositories that gives you a publicly available URL that loads your repository.  The link to the page corresponding to your repository should be written into the readme file of your repository.
