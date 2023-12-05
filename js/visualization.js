@@ -4,7 +4,7 @@
 
 })());
 
-//NYC chart
+/*//NYC chart
 var total = 156,
     buttons = document.querySelector('.buttons'),
     pie = document.querySelector('.pie'),
@@ -62,12 +62,13 @@ var setActiveClass = function(el) {
 setPieChart('RedLine');
 setActiveClass(buttons.children[0]);
 
+
 //LINE CHART BELOW
 
 // dimensions
-const margin = {top: 70, right: 30, bottom:40, left:80};
-const width =  1200- margin.left - margin.right;
-const height = 500 - margin.top - margin.bottom;
+var margin = {top: 70, right: 30, bottom:40, left:80};
+var width =  1200- margin.left - margin.right;
+var height = 500 - margin.top - margin.bottom;
 
 // x and y scales
 const x = d3.scaleTime()
@@ -134,4 +135,4 @@ svg.append("text")
 .style("font-weight", "bold")
 .style("font-family", "sans-serif")
 .text("MBTA transit lines"); 
-  
+  */
