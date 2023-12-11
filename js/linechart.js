@@ -1,84 +1,226 @@
-// dimensions
-var margin = { top: 70, right: 30, bottom: 40, left: 80 };
-var width = 1200 - margin.left - margin.right;
-var height = 500 - margin.top - margin.bottom;
+/* global D3 */
 
-// x and y scales
-const x = d3.scaleBand().range([0, width]).padding(0.1);
-const y = d3.scaleLinear().range([height, 0]);
+// Initialize a line chart. Modeled after Mike Bostock's
+// Reusable Chart framework https://bost.ocks.org/mike/chart/
+function linechart() {
 
-// SVG element
-const svg = d3
-  .select("#chart-container")
-  .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  // Based on Mike Bostock's margin convention
+  // https://bl.ocks.org/mbostock/3019563
+  let margin = {
+      top: 60,
+      left: 50,
+      right: 30,
+      bottom: 35
+    },
+    width = 500 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom,
+    xValue = d => d.stop_name,
+    yValue = d => d.average_flow,
+    xLabelText = "Stop Name",
+    yLabelText = "Average Flow",
+    yLabelOffsetPx = 0,
+    xScale = d3.scaleBand().padding(0.1),
+    yScale = d3.scaleLinear(),
+    ourBrush = null,
+    selectableElements = d3.select(null),
+    dispatcher;
 
-// Load and Process data
-d3.json("../data/Stations.json", function (error, data) {
-  if (error) {
-    console.error("Error loading JSON:", error);
-    return;
+  // Create the chart by adding an svg to the div with the id 
+  // specified by the selector using the given data
+  function chart(selector, data) {
+    let svg = d3.select(selector)
+      .append("svg")
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom].join(' '))
+        .classed("svg-content", true);
+
+    svg = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    //Define scales
+    xScale
+      .domain(data.map(xValue))
+      .rangeRound([0, width]);
+
+    yScale
+      .domain([
+        d3.min(data, yValue),
+        d3.max(data, yValue)
+      ])
+      .rangeRound([height, 0]);
+
+    // X axis
+    let xAxis = svg.append("g")
+        .attr("transform", "translate(0," + (height) + ")")
+        .call(d3.axisBottom(xScale));
+        
+    // Put X axis tick labels at an angle
+    xAxis.selectAll("text") 
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-45)");
+        
+    // X axis label
+    xAxis.append("text")        
+        .attr("class", "axisLabel")
+        .attr("transform", "translate(" + (width - 50) + ",-10)")
+        .text(xLabelText);
+    
+    // Y axis and label
+    let yAxis = svg.append("g")
+        .call(d3.axisLeft(yScale))
+      .append("text")
+        .attr("class", "axisLabel")
+        .attr("transform", "translate(" + yLabelOffsetPx + ", -12)")
+        .text(yLabelText);
+
+    // Add the line
+    svg.append("path")
+        .datum(data)
+        .attr("class", "linePath")
+        .attr("d", d3.line()
+          .x(d => xScale(xValue(d)) + xScale.bandwidth() / 2)
+          .y(d => yScale(yValue(d)))
+        );
+
+    // Add the points
+    let points = svg.append("g")
+      .selectAll(".linePoint")
+        .data(data);
+    
+    points.exit().remove();
+          
+    points = points.enter()
+      .append("circle")
+        .attr("class", "point linePoint")
+      .merge(points)
+        .attr("cx", d => xScale(xValue(d)) + xScale.bandwidth() / 2)
+        .attr("cy", d => yScale(yValue(d)))        
+        .attr("r",5);
+        
+    selectableElements = points;
+
+    svg.call(brush);
+
+    // Highlight points when brushed
+    function brush(g) {
+      const brush = d3.brush()
+        .on("start brush", highlight)
+        .on("end", brushEnd)
+        .extent([
+          [-margin.left, -margin.bottom],
+          [width + margin.right, height + margin.top]
+        ]);
+
+      ourBrush = brush;
+
+      g.call(brush); // Adds the brush to this element
+
+      // Highlight the selected circles.
+      function highlight() {
+        if (d3.event.selection === null) return;
+        const [
+          [x0, y0],
+          [x1, y1]
+        ] = d3.event.selection;
+        points.classed("selected", d =>
+          x0 <= xScale(xValue(d)) + xScale.bandwidth() / 2 && xScale(xValue(d)) + xScale.bandwidth() / 2 <= x1 && y0 <= yScale(yValue(d)) && yScale(yValue(d)) <= y1
+        );
+
+        // Get the name of our dispatcher's event
+        let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+
+        // Let other charts know
+        dispatcher.call(dispatchString, this, svg.selectAll(".selected").data());
+      }
+      
+      function brushEnd() {
+        // We don't want an infinite recursion
+        if (d3.event.sourceEvent.type != "end") {
+          d3.select(this).call(brush.move, null);
+        }
+      }
+    }
+
+    return chart;
   }
 
-  // Sort data by a relevant attribute (e.g., stop_name)
-  data.sort((a, b) => d3.ascending(a.stop_name, b.stop_name));
+  // The x-accessor from the datum
+  function X(d) {
+    return xScale(xValue(d));
+  }
 
-  // x domain
-  x.domain(data.map(d => d.stop_name));
+  // The y-accessor from the datum
+  function Y(d) {
+    return yScale(yValue(d));
+  }
 
-  // y domain
-  y.domain([0, d3.max(data, d => d.average_flow)]);
+  chart.margin = function (_) {
+    if (!arguments.length) return margin;
+    margin = _;
+    return chart;
+  };
 
-  // create line generator
-  const line = d3.line()
-    .x(d => x(d.stop_name) + x.bandwidth() / 2)
-    .y(d => y(d.average_flow));
+  chart.width = function (_) {
+    if (!arguments.length) return width;
+    width = _;
+    return chart;
+  };
 
-  // add the line path
-  svg
-    .append("path")
-    .datum(data)
-    .attr("fill", "none")
-    .attr("stroke", "blue")
-    .attr("stroke-width", 1)
-    .attr("d", line);
+  chart.height = function (_) {
+    if (!arguments.length) return height;
+    height = _;
+    return chart;
+  };
 
-  // Add X-axis
-  svg.append("g")
-    .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-    .style("text-anchor", "end")
-    .attr("transform", "rotate(-45)");
+  chart.x = function (_) {
+    if (!arguments.length) return xValue;
+    xValue = _;
+    return chart;
+  };
 
-  // Add Y-axis
-  svg.append("g")
-    .call(d3.axisLeft(y));
+  chart.y = function (_) {
+    if (!arguments.length) return yValue;
+    yValue = _;
+    return chart;
+  };
 
-  // Add Y-axis label
-  svg
-    .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("y", 0 - margin.left)
-    .attr("x", 0 - height / 2)
-    .attr("dy", "1em")
-    .style("text-anchor", "middle")
-    .style("font-size", "14px")
-    .style("fill", "#777")
-    .style("font-family", "sans-serif")
-    .text("Average Flow");
+  chart.xLabel = function (_) {
+    if (!arguments.length) return xLabelText;
+    xLabelText = _;
+    return chart;
+  };
 
-  // Add the chart title
-  svg
-    .append("text")
-    .attr("class", "chart-title")
-    .attr("x", margin.left - 115)
-    .attr("y", margin.top - 100)
-    .style("font-size", "24px")
-    .style("font-weight", "bold")
-    .style("font-family", "sans-serif")
-    .text("Average Flow by Stop");
-});
+  chart.yLabel = function (_) {
+    if (!arguments.length) return yLabelText;
+    yLabelText = _;
+    return chart;
+  };
+
+  chart.yLabelOffset = function (_) {
+    if (!arguments.length) return yLabelOffsetPx;
+    yLabelOffsetPx = _;
+    return chart;
+  };
+
+  // Gets or sets the dispatcher we use for selection events
+  chart.selectionDispatcher = function (_) {
+    if (!arguments.length) return dispatcher;
+    dispatcher = _;
+    return chart;
+  };
+
+  // Given selected data from another visualization 
+  // select the relevant elements here (linking)
+  chart.updateSelection = function (selectedData) {
+    if (!arguments.length) return;
+
+    // Select an element if its datum was selected
+    selectableElements.classed("selected", d => {
+      return selectedData.includes(d)
+    });
+  };
+
+  return chart;
+}

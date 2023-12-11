@@ -2,6 +2,41 @@
 // variables and prevent 
 ((() => {
 
+  
+  const dispatchString = "selectionUpdated";
+
+  // Create a dispatcher (d3-dispatch) for selection events
+  const dispatcher = d3.dispatch(dispatchString);
+
+  // Load the data from a JSON file
+  d3.json("../data/stations.json", (data) => {
+
+    // Create a line chart
+    let lcStationFlow = linechart()
+      .x(d => d.stop_name)
+      .xLabel("Station Name")
+      .y(d => d.average_flow)
+      .yLabel("Average Flow")
+      .yLabelOffset(40)
+      .selectionDispatcher(dispatcher)
+      ("#chart-container", data);
+
+    // Create a table
+    const tableData = mbtatable()
+      .selectionDispatcher(dispatcher)
+      ("#table-container", data);
+
+    // When the line chart selection is updated via brushing, 
+    // tell the table to update its selection (linking)
+    lcStationFlow.selectionDispatcher().on(dispatchString, function(selectedData) {
+      tableData.updateSelection(selectedData);
+    });
+
+    // When the table is updated via brushing, tell the line chart
+    tableData.selectionDispatcher().on(dispatchString, function(selectedData) {
+      lcStationFlow.updateSelection(selectedData);
+    });
+  });
 })());
 
 /*//NYC chart
