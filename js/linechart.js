@@ -8,18 +8,18 @@ function linechart() {
   // https://bl.ocks.org/mbostock/3019563
   let margin = {
       top: 60,
-      left: 50,
+      left: 20,
       right: 30,
-      bottom: 35
+      bottom: 100
     },
-    width = 500 - margin.left - margin.right,
+    width = 800 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
     xValue = d => d.stop_name,
     yValue = d => d.average_flow,
     xLabelText = "Stop Name",
     yLabelText = "Average Flow",
     yLabelOffsetPx = 0,
-    xScale = d3.scaleBand().padding(0.1),
+    xScale = d3.scaleBand().padding(0.5),
     yScale = d3.scaleLinear(),
     ourBrush = null,
     selectableElements = d3.select(null),
@@ -29,10 +29,10 @@ function linechart() {
   // specified by the selector using the given data
   function chart(selector, data) {
     let svg = d3.select(selector)
-      .append("svg")
-        .attr("preserveAspectRatio", "xMidYMid meet")
-        .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom].join(' '))
-        .classed("svg-content", true);
+    .append("svg")
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom].join(' '))
+    .classed("svg-content", true);
 
     svg = svg.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -55,7 +55,7 @@ function linechart() {
         .call(d3.axisBottom(xScale));
         
     // Put X axis tick labels at an angle
-    xAxis.selectAll("text") 
+    xAxis.selectAll("text")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
@@ -80,7 +80,7 @@ function linechart() {
         .datum(data)
         .attr("class", "linePath")
         .attr("d", d3.line()
-          .x(d => xScale(xValue(d)) + xScale.bandwidth() / 2)
+          .x(d => xScale(xValue(d)))
           .y(d => yScale(yValue(d)))
         );
 

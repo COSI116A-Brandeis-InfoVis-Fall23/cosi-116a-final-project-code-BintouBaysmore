@@ -50,7 +50,7 @@
     
     <!--<p><em>Summary of user needs and motivating questions.</em></p>-->
     
-    <p><em>Our research explores the different transit systems and make comparisons on cleanliness, speed, and crime rates to ensure that riders have knowledge on how their public transportation experience in different areas will be. </em></p>
+    <p><em>Boston's MBTA is more than just a transit system; it's the heartbeat of the city, connecting communities and keeping the pace of urban life moving. With its network of buses, subways, commuter trains, and boats, it's a symbol of Boston's commitment to getting people where they need to go. However, as the oldest transit system in the US, the MBTA faces many issues regarding its infrastructure and accessibility. These problems exhibit trends which my group was able to examine and create patterns of. We believe that by showing these patterns, we can highlight what's working and what's not, and maybe even help find ways to make the MBTA better for everyone who relies on it.</em></p>
 
     
     <h1>Visualization</h1>
@@ -83,23 +83,7 @@
     <h1>Data on MBTA</h1>
         <div id="chart-container"></div>  <!--this div is for the line chart-->
 
-      <figure>
-
-        <div class="buttons"></div>
-        <svg width="100" height="100" class="chart">
-          <circle r="25" cx="50" cy="50" class="pie"/>
-        </svg>
-        
-      </figure>
-      <div id="myChart"></div>
       
-      <figure> 
-        
-        <div class="buttons"></div>
-        <svg width="100" height="100" class="chart">
-        </svg>
-        
-      </figure>
      
       
     
@@ -110,7 +94,7 @@
   <!-- Your writeup goes here -->
   <div class = "content-column">
 
-    <!-- Don't need this right now!
+  
     <h1>Demo Video</h1>
     
     <p><em>Embedded MP4 demo video using the HTML5 &lt;video&gt; tag. </em></p>
@@ -121,39 +105,54 @@
        a <a href="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4">link to the video</a> instead.</p>
     </video>
     <h1>Visualization explanation</h1>
-    
-    <p><em>Final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
-    -->
+    <p><em>
+    <img src="images/visSC1.png" alt="Visualization Screenshot">
+    <img src="images/visSC2.png" alt="Visualization Screenshot">
+    <img src="images/visSC3.png" alt="Visualization Screenshot">
+
+    <a href="https://c569257608da4dcaafbc-my.sharepoint.com/:p:/g/personal/ppraburam_brandeis_edu/EV3rbISvCKFEvOle0fSPvvABXFldf9lV_iWiD3SoGrCRBQ">MBTA Transit Presentation COSI 116</a>
 
     <h1>Data Analysis</h1>
     <!--<p><em>Summary of data, data types, and data preprocessing.</em></p>-->
 
-    <p><em>We are focusing more on the goal of appealing to the users and allowing them to select a specific area and get information about the transits which will decide whether they will use it. Having this information provided will be greatly appreciated and have more people to use public transportation. Data provided will have the amount of people of color in the area throughout the years, the cleanliness of the station, and the crime rate in the area. 3 things most important that'll impact the usage of public transportation.</em></p>
+    <p><em>All of the data we used for this project were in CSV format, which made sense as we were looking for arrival times and ridership data. The data, however, contained lots of junk information such as the train ID and other various object IDs. As a part of the preprocessing stage, we reformatted the sheets before we used them on our web page. We had to delete columns and organize the data by dates but once that was done, we converted the sheets to JSON and XML files to embed them into the HTML of our code. This allows for a highly interactive experience where you can manipulate the data without reloading the page.</em></p>
 
-    <!--
+    
     <h1>Task Analysis</h1>
 
-    <p><em>Summary of task table.</em></p>
+    <p><em>
+      Domain tasks: The first task was that we had to find data in the CSV format that described either transit arrival times or ridership across all stations and lines. Then we had to convert the files into JSON and XML files. Lastly, we had to embed this into our code to get the visualizations displayed. </p>
+      <p>Processes: The first task was very research based as we had to parse several nationally funded databases to find relevant CSV files. The second task consisted of removing junk data and formatting the files in a way that, once converted to XML or JSON, could be easily embedded into the code. The final task focused on the coding, as the files were then integrated into our website’s HTML body. </p>
+      <p>Goals: The tasks were designed so that each step served as a direct building block to the visualization of the data. The end goal of the first task was to have a good set of data that we could base our visualizations on. The end goal of the second task was to filter the data of any junk information and to reformat the data appropriately. The end goal of the third task was to embed the data into the website to allow the client to interact with and view the visualizations. </p>
+      <p>Abstract tasks for domain problems: The only abstract task we were thinking about was the overall structure of the website and how the visualizations were going to fit in with the layout. This was an implicit task that we focused on in the sense that we thought about structure every step of the way, from task one, all the way to task three. The layout of the website had to be modified a few times but eventually, was sorted out in the end. </p>
+    </em></p>
 
-    <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
-    -->
+   
 
     <h1>Design Process</h1>
     
    <!--<p><em>Sketches and design choices to justify final visualization.</em></p>-->
 
-    <p><em>We have provided information on each station rather than each train to avoid cluttering the page with too much information as these visualizations are comparing the stations of each transit in the United States. </em></p>
-
+   <p>Design Process: As seen below, our starter sketches were very primitive compared to our final designs, yet they helped us imagine what kind of data we would need. It was only through the designs listed below which helped us decided on the types of data we were going to show initially. From this point forward, we decided on how the data could be read the easiest by deciding on the appropriate marks and channels for the data we were showing. Since most of our visualizations fall into the category of either a table or a map. The marks of our tables and charts focused on tables and cells with their channels focusing on the formatting, positioning, and colors to make the data easier to interpret. For the maps, we focused on the points and lines of the MBTA map as our marks and the size and shape of those marks for our channels. After testing, we found that the visualizations we have currently are the optimum visualizations for the data we chose to represent, as multiple users have found our data user-friendly, and had no thoughts on how the data could have been displayed better. </p>
+   <img src="images/GVSketch.jpeg" alt="Gabriella's Visualization Sketches">
+   <img src="images/BBSketch.jpeg" alt="Bintou's Visualization Sketches">
     <h1>Conclusion</h1>
     
-    <p><em>We added the map and charts of the data of a specific stop in different transits in America to compare with the MBTA and to have that information available.</em></p>
+    <p><em> In conclusion, we split up our website creation into three main tasks and one abstract task. The three main tasks were the data search process, the data parsing and cleaning process, and embedding the data into the website. The abstract task was to maintain an appropriate and user-friendly website structure, which was the task that we kept in mind the whole time during project development. Although our visualization covers the MBTA pretty well, we could have not only obtained more specific data but could have expanded upon our original idea and created visualizations for all of the national transportation networks, such as the MTA (New York’s transit system).</em></p>
 
     
     <h1>Acknowledgments</h1>
     <ul>
       <li><a href="https://d3js.org/">D3: Data-Driven Documents</a> by Mike Bostock.</li>
+        <ul>
+          <li><a href="https://github.com/d3/d3-brush">d3-brush</a>, which let you select a one- or two-dimensional
+            region using the mouse or touch. We use it for brushing.</li>
+          <li><a href="https://github.com/d3/d3-dispatch">d3-dispatch</a>, which lets you register named callbacks and
+            call them with arguments. We use it for linking.</li>
+        </ul>
       <li><a href="https://github.com/COSI116A-Brandeis-InfoVis-Fall23/cosi-116a-final-project-code-BintouBaysmore.git">Pure CSS responsive "Fork me on GitHub" ribbon</a> by Bintou Baysmore, Pranav Praburam, and Gabriella Vukomanovic.</li>
-      <li><a href="https://github.com/datavizdad/d3linechartseries/tree/main/Part2">Line chart code</a> by DataVizDad</li>
+      <li><a href="https://bost.ocks.org/mike/chart/">Towards Reusuable Charts</a> by Mike Bostock.</li>
+      <li><a href="https://github.com/maptime-ams/animated-borders-d3js">U.S. states border map</a> by Maptime Amsterdam</li>
     </ul>
     
   </div>

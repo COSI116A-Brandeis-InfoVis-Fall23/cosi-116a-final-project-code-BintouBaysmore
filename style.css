@@ -89,7 +89,7 @@ h1, h2, h3 {
 
 /* Default style for marks and channels used */
 .point {
-	fill: white;
+	fill: rgb(8, 8, 8);
 	stroke: #69b3a2;
 	stroke-width: 3;
   }
@@ -153,52 +153,13 @@ h1, h2, h3 {
 	background-color: #e08fa3;
   }
 
+  #line-chart-container svg {
+	max-width: 100%; /* or adjust as needed */
+  }
 
 
-/*NYC chart style*/
-
-circle {
-	fill: #ddd;
-	stroke: #0074d9;
-	stroke-width: 50;
-	stroke-dasharray: 0 158;
-	transition: stroke-dasharray .3s ease;
-  }
-  
-  /*
-  svg {
-	margin: 0 auto;
-	transform: rotate(-90deg);
-	background: #ddd;
-	border-radius: 50%;
-  }
-  */
-
-  .buttons {
-	margin-bottom: 30px;
-  }
-  
-  button {
-	text-transform: capitalize;
-	font-size: 13px;
-	cursor: pointer;
-	-webkit-appearance: none;
-	border: none;
-	margin-right: 5px;
-	background-color: transparent;
-	padding: 5px 10px;
-	outline: none;
-	border-radius: 2px;
-	transition: background-color .1s ease, color .2s ease;
-	
-	&:last-of-type {
-	  margin-right: 0;
-	}
-	
-	&.active {
-	  font-weight: 400;
-	  background-color: #0074d9;
-	  color: white;
-	}
-  }
-  
+img{
+	max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
