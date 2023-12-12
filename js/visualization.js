@@ -39,6 +39,9 @@
   });
 })());
 
+
+//DATA + VISUALIZATIONS WE DECIDED NOT TO USE ANYMORE
+
 /*//NYC chart
 var total = 156,
     buttons = document.querySelector('.buttons'),

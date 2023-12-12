@@ -1,6 +1,6 @@
 
 //used Maptime Tutorial with some alterations (modern USA instead of 1790 in topologies array)
-
+//when hovering the name of the states pop up
 var svgStates = d3.select("svg #states"),
   svgBoundary = d3.select("svg #boundary"),
   states = {},
